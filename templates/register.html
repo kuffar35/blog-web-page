@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+
+{% block body %}
+{% from "includes/formhelpers.html" import render_field %}
+
+<h3>USER THE REGISTRATION</h3>
+<hr>
+
+<form method="post">
+  
+   <div class="login" style="float:left;width: 300px;height: 450px;margin-left: 350px;border-bottom: 1px solid #d5d5d5">
+    {{ render_field(form.name,class="form-control") }}
+    {{ render_field(form.userName,class="form-control") }}
+    {{ render_field(form.email,class="form-control") }}
+    {{ render_field(form.password,class="form-control") }}
+    {{ render_field(form.confirm,class="form-control") }}
+    
+    <button  class="btn btn-info" type="submit">SAVE</button>
+   </div>
+</form>
+
+{% endblock %}

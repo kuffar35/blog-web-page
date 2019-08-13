@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+
+{% block body %}
+{% include "dashbord.html" %}
+{% include "dashbord2.html" %}
+
+{% from "includes/formhelpers.html" import render_field %}<br>
+<hr>
+<td><a href="/cvSeminarAdd" class="btn btn-info">ADD SEMINAR</a></td> 
+<hr>
+ 
+ 
+   <table class="table table-hover table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">SEMINAR NAME</th>
+      <th scope="col">SEMINAR TİME</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+ {% for seminar in seminar %}
+    <tr>
+     <th scope="row">{{seminar.sem_id}}</th>
+     <th scope="row">{{seminar.sem_name}}</th>
+     <th scope="row">{{seminar.sem_data}}</th>
+      <td></td>
+      <td></td>
+
+      <td><a href="/Sedit/{{seminar.sem_id}}" class="btn btn-dark">Update</a></td>
+      <td><a href="/Sdelete/{{seminar.sem_id}}" class="btn btn-dark">Delete</a></td> {% endfor %}   
+
+     </tr>
+   
+    
+  </tbody>
+</table>
+               
+ <hr>
+ {% endblock %}

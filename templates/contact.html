@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+
+{% block body %}
+
+<h5>CONTACT</h5>
+<hr>
+    
+               {%if contact %}
+               <div class="index_Screen" style="float: left;width:800px;height: 400px;
+               margin-top: 50px;margin-left: 100px;font-size: 15px;
+               ">
+                <ul class="list-group">
+                 {% for con in contact %}
+
+                   <label style="float: left;width: 400px;height: 30px;font-size: 15px;margin-top: 15px;margin-left: 10px;color:#990000">NAME : {{con.name}}</label> 
+                   
+                   <label style="float: left;width: 400px;height: 30px;font-size: 15px;margin-top: 15px;margin-left: 10px;color:#990000">LAST NAME : {{con.lastname}}</label>
+                   
+                   <label style="float: left;width: 400px;height: 30px;font-size: 15px;margin-top: 15px;margin-left: 10px;color:#990000">MAIL : {{con.gmail}}</label>
+                   
+                   <label style="float: left;width: 400px;height: 30px;font-size: 15px;margin-top: 15px;margin-left: 10px;color:#990000">SOCIAL MEDIA : {{con.socialmedia}}</label>
+                   
+                   <label style="float: left;width: 400px;height: 30px;font-size: 15px;margin-top: 15px;margin-left: 10px;color:#990000">URL ADRESS : {{con.url_adress}}</label>                 
+                                                     
+                 {% endfor %}  
+                </ul>
+               {%else %}
+               <div class="alert alert-danger">
+               	no posts in this blog yet
+               </div>
+               {%endif %}
+           </div>
+
+{% endblock %}
+
+
+
+                  

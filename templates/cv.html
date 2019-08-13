@@ -1,0 +1,114 @@
+{% extends "layout.html" %}
+
+
+{% block body %}
+
+<h5>EDUCATION</h5>
+<hr>
+{%if educationRead %}
+                <ul class="list-group">
+                 {% for educationRead in educationRead %}
+                   
+                  <label style="color:#990000">SCHOOL NAME --->   {{educationRead.school_name}}</label> 	
+                  <label style="color:#990000">FINISH TİME --->  {{educationRead.school_data}}</label> 
+
+                <br>
+                 {% endfor %}                   
+                </ul>
+               {%else %}
+               <div class="alert alert-danger">
+               	no posts in this blog yet
+               </div>
+               {%endif %}
+
+<h5>CERTIFICATE</h5>
+<hr>
+{%if certificateRead %}
+                <ul class="list-group">
+                 {% for certificateRead in certificateRead %}
+                   
+                  <label style="color:#990000">CERTIFICATE NAME --->   {{certificateRead.cer_name}}</label> 	
+                  <label style="color:#990000">FINISH TİME --->  {{certificateRead.cer_data}}</label> 
+
+                <br>
+                 {% endfor %}                   
+                </ul>
+               {%else %}
+               <div class="alert alert-danger">
+               	no posts in this blog yet
+               </div>
+               {%endif %}               
+<h5>SEMINAR</h5>
+<hr>
+{%if seminarRead %}
+                <ul class="list-group">
+                 {% for seminarRead in seminarRead %}
+                   
+                  <label style="color:#990000">SEMINAR NAME --->   {{seminarRead.sem_name}}</label> 	
+                  <label style="color:#990000">FINISH TİME --->  {{seminarRead.sem_data}}</label> 
+
+                <br>
+                 {% endfor %}                   
+                </ul>
+               {%else %}
+               <div class="alert alert-danger">
+               	no posts in this blog yet
+               </div>
+               {%endif %}               
+
+<h5>LANGUAGE</h5>
+<hr>
+{%if languageRead %}
+                <ul class="list-group">
+                 {% for languageRead in languageRead %}
+                   
+                  <label style="color:#990000">LANGUAGE NAME --->   {{languageRead.lang_name}}</label> 	
+                  <label style="color:#990000">LEVEL --->  {{languageRead.lang_level}}</label> 
+
+                <br>
+                 {% endfor %}                   
+                </ul>
+               {%else %}
+               <div class="alert alert-danger">
+               	no posts in this blog yet
+               </div>
+               {%endif %}      
+
+<h5>WORK EXPERINCE</h5>
+<hr>
+{%if workexperinceRead %}
+                <ul class="list-group">
+                 {% for workexperinceRead in workexperinceRead %}
+                   
+                  <label style="color:#990000">WORK NAME --->   {{workexperinceRead.work_name}}</label> 	
+                  <label style="color:#990000">WORK EXPERINCE --->  {{workexperinceRead.work_data}}</label> 
+
+                <br>
+                 {% endfor %}                   
+                </ul>
+               {%else %}
+               <div class="alert alert-danger">
+               	no posts in this blog yet
+               </div>
+               {%endif %}      
+
+<h5>TALANTED</h5>
+<hr>
+{%if talantedRead %}
+                <ul class="list-group">
+                 {% for talantedRead in talantedRead %}
+                   
+                  <label style="color:#990000">WORK NAME --->   {{talantedRead.tal_name}}</label> 	
+                  <label style="color:#990000">WORK EXPERINCE --->  {{talantedRead.tal_level}}</label> 
+
+                <br>
+                 {% endfor %}                   
+                </ul>
+               {%else %}
+               <div class="alert alert-danger">
+               	no posts in this blog yet
+               </div>
+               {%endif %}                     
+
+
+{% endblock %}

@@ -1,0 +1,11 @@
+.login{
+	float: left;
+	width: 200px;
+	height: 200px;
+	background-color: black;
+}
+
+.lbl{
+	float: left;
+	color: red;
+}

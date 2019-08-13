@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+
+{% block body %}
+
+
+ {%if project %}
+   
+   <h9>{{project.arthicles_title}}
+
+   	<hr>
+   	Header : {{project.p_header}}
+   	<hr>
+   	Time : {{project.p_time}}
+    <hr>
+    Url  :  {{project.p_url}}
+   	<hr>
+   	{{project.p_content|safe}}
+               
+ {%else %}
+  <div class="alert alert-warning">
+      	no posts in this blog yet
+  </div>           
+ {%endif %}
+
+{% endblock %}

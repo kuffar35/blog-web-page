@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+
+{% block body %}
+
+ {%if session["logged_in"]%}
+    
+               {%if articles %}
+                <ul class="list-group">
+                 {% for article in articles %}
+                   <li class="list-group-item"><a href="article/{{article.arthicles_id}}" style="text-decoration: none; color: #990000"> {{article.arthicles_title}}</a></li>
+                 {% endfor %}  
+                </ul>
+               {%else %}
+               <div class="alert alert-danger">
+               	no posts in this blog yet
+               </div>
+               {%endif %}
+ {%else %}
+             if you have not a account, you don't this page 
+ {%endif %}
+
+{% endblock %}

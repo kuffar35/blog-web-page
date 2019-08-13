@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+
+{% block body %}
+{% include "dashbord.html" %}
+{% include "dashbord2.html" %}
+
+{% from "includes/formhelpers.html" import render_field %}<br>
+<hr>
+<td><a href="/cvEducationAdd" class="btn btn-info">ADD EDUCATION</a></td> 
+<hr>
+ 
+ 
+   <table class="table table-hover table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">SCHOOL NAME</th>
+      <th scope="col">SCHOOL TİME</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+ {% for education in education %}
+    <tr>
+     <th scope="row">{{education.Ed_id}}</th>
+     <th scope="row">{{education.school_name}}</th>
+     <th scope="row">{{education.school_data}}</th>
+      <td></td>
+      <td></td>
+
+      <td><a href="/Eedit/{{education.Ed_id}}" class="btn btn-dark">Update</a></td>
+      <td><a href="/Edelete/{{education.Ed_id}}" class="btn btn-dark">Delete</a></td> 
+ {% endfor %}   
+
+     </tr>
+   
+    
+  </tbody>
+</table>
+               
+ <hr>
+ {% endblock %}

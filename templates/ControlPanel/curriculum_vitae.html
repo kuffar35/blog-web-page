@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+
+{% block body %}
+{% include "dashbord.html" %}
+{% include "dashbord2.html" %}
+
+
+
+{% from "includes/formhelpers.html" import render_field %}<br>
+
+<h4>PERSONAL INFORMATION</h4>
+<hr>
+<form method="post">
+  
+    
+    {{ render_field(form.name,class="form-control") }}
+    {{ render_field(form.lastname,class="form-control") }}
+    {{ render_field(form.birthdata,class="form-control") }}
+    {{ render_field(form.hobbies,class="form-control") }}
+    <button  class="btn btn-info" type="submit">PERSONAL INFORMATION UPDATE</button>
+   
+   
+</form>
+<hr>
+
+
+
+{% endblock %}

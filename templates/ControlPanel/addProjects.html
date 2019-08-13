@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+
+{% block body %}
+{% include "dashbord.html" %}
+{% from "includes/formhelpers.html" import render_field %}
+
+<br>
+<h4>ADD PROJECT</h4>
+<hr>
+
+<form method="post">
+    
+    
+    {{ render_field(Aproject.header,class="form-control") }}
+    {{ render_field(Aproject.content,class="form-control") }}
+    {{ render_field(Aproject.time,class="form-control") }}
+    {{ render_field(Aproject.url,class="form-control") }}
+    
+    <button  class="btn btn-info" type="submit">ADD PROJECT</button>
+   
+   
+</form>
+<br>
+
+<h4>UPDATE OR DELETE </h4>
+<hr>
+ <table class="table table-hover table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">PROJECT HEADER</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+ {% for PprojectList in PprojectList %}
+    <tr>
+     <th scope="row">{{PprojectList.p_id}}</th>
+     <th scope="row">{{PprojectList.p_header}}</th>
+      <td></td>
+      <td></td>
+
+      <td><a href="/PROJECTedit/{{PprojectList.p_id}}" class="btn btn-dark">Update</a></td>
+      <td><a href="/PROJECTdelete/{{PprojectList.p_id}}" class="btn btn-dark">Delete</a></td> 
+ {% endfor %}   
+
+     </tr>
+   
+    
+  </tbody>
+</table>
+
+ <br>
+
+{% endblock %}

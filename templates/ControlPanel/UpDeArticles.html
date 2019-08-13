@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+
+{% block body %}
+{% include "dashbord.html" %}
+{% from "includes/formhelpers.html" import render_field %}
+
+
+
+ {%if articles %}
+   <br>
+   <table class="table table-hover table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Title</th>
+      <th scope="col">Auther</th>
+      <th scope="col">Time</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+   {% for article in articles %}
+    <tr>
+     <th scope="row">{{article.arthicles_id}}</th>
+      <td><a href="/article/{{article.arthicles_id}}">{{article.arthicles_title}}</td>
+      <td>{{article.arthicles_author}}</td>
+      <td>{{article.arthicles_createdData}}</td>
+
+      <td><a href="/edit/{{article.arthicles_id}}" class="btn btn-dark">Update</a></td>
+      <td><a href="/delete/{{article.arthicles_id}}" class="btn btn-dark">Delete</a></td>
+      
+
+     </tr>
+   {% endfor %}
+    
+  </tbody>
+</table>
+               
+ {%else %}
+   <div class="alert alert-danger">
+       	no posts in this blog yet
+   </div>         
+ {%endif %}
+
+{% endblock %}

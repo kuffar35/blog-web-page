@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+
+{% block body %}
+{% include "dashbord.html" %}
+{% from "includes/formhelpers.html" import render_field %}
+<hr>
+  <a href="/UpDeArticles" style="text-decoration: none; color: #999">articles update and delete</a>
+  <hr>
+<form method="post">
+    
+    
+    {{ render_field(form.title,class="form-control") }}
+    {{ render_field(form.content,class="form-control") }}
+    
+    <button  class="btn btn-info" type="submit">ADD ARTICLES</button>
+   
+   
+</form>
+ <br>
+
+{% endblock %}

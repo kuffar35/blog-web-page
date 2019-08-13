@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+
+{% block body %}
+
+<h5>CERTIFICATE</h5>
+<hr>
+{%if cvC %}
+                <ul class="list-group">
+                 {% for cvC in cvC %}
+                   
+                  <label style="color:#990000">CERTIFICATE NAME --->   {{cvC.cer_name}}</label> 	
+                  <label style="color:#990000">CERTIFICATE TİME --->  {{cvC.cer_data}}</label> 
+
+                <br>
+                 {% endfor %}                   
+                </ul>
+               {%else %}
+               <div class="alert alert-danger">
+               	no posts in this blog yet
+               </div>
+               {%endif %}
+
+
+
+
+{% endblock %}

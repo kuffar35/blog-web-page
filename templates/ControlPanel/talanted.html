@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+
+{% block body %}
+{% include "dashbord.html" %}
+{% include "dashbord2.html" %}
+
+{% from "includes/formhelpers.html" import render_field %}<br>
+<hr>
+<td><a href="/cvTalantedeAdd" class="btn btn-info">ADD WORK EXPERINCE</a></td> 
+<hr>
+ 
+ 
+   <table class="table table-hover table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">TALANTED NAME</th>
+      <th scope="col">TALANTED LEVEL</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+ {% for talanted in talanted %}
+    <tr>
+     <th scope="row">{{talanted.tal_id}}</th>
+     <th scope="row">{{talanted.tal_name}}</th>
+     <th scope="row">{{talanted.tal_level}}</th>
+      <td></td>
+      <td></td>
+
+      <td><a href="/Tedit/{{talanted.tal_id}}" class="btn btn-dark">Update</a></td>
+      <td><a href="/Tdelete/{{talanted.tal_id}}" class="btn btn-dark">Delete</a></td>
+ {% endfor %}   
+
+     </tr>
+   
+    
+  </tbody>
+</table>
+               
+ <hr>
+ {% endblock %}

@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+
+{% block body %}
+{% include "dashbord.html" %}
+{% from "includes/formhelpers.html" import render_field %}
+<br>
+<form method="post">
+  
+    
+    {{ render_field(form.name,class="form-control") }}
+    {{ render_field(form.lastname,class="form-control") }}
+    {{ render_field(form.mail,class="form-control") }}
+    {{ render_field(form.socialmedia,class="form-control") }}
+    {{ render_field(form.url_adress,class="form-control") }}
+    <button  class="btn btn-info" type="submit">update Index</button>
+   
+   
+</form>
+ <br>
+
+{% endblock %}

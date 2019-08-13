@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+
+{% block body %}
+
+{% include "dashbord2.html" %}
+
+{% from "includes/formhelpers.html" import render_field %}<br>
+
+
+<form method="post">
+    
+    
+    {{ render_field(form.name,class="form-control") }}
+    {{ render_field(form.time,class="form-control") }}
+    
+    <button  class="btn btn-info" type="submit">update</button>
+   
+   
+</form>
+
+
+ {% endblock %}

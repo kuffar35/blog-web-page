@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+
+{% block body %}
+{% from "includes/formhelpers.html" import render_field %}
+
+<h3>USER ACCESS</h3>
+<hr>
+
+<form method="post">
+  
+   <div class="login" style="float:left;width: 300px;height: 250px;margin-left: 350px;border-bottom: 1px solid #d5d5d5">
+    {{ render_field(form.userName,class="form-control") }}
+    {{ render_field(form.password,class="form-control") }}
+    
+    <button  class="btn btn-info" type="submit">ENTER</button>
+    <ul class="navbar-nav ml-auto">
+     <li class="nav-item active">
+        <a class="nav-link" style="color: #990000;margin-left: 40px;margin-top: 20px" href="/register">FOR THE REGISTRATION</a>
+     </li>
+    </ul>
+   </div>
+</form>
+
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+
+{% block body %}
+{% include "dashbord.html" %}
+{% include "dashbord2.html" %}
+
+{% from "includes/formhelpers.html" import render_field %}<br>
+<hr>
+<td><a href="/cvWorkExperinceAdd" class="btn btn-info">ADD WORK EXPERINCE</a></td> 
+<hr>
+ 
+ 
+   <table class="table table-hover table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">WORK EXPERENCE NAME</th>
+      <th scope="col">WORK EXPERENCE TIME</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+ {% for workexperince in workexperince %}
+    <tr>
+     <th scope="row">{{workexperince.work_id}}</th>
+     <th scope="row">{{workexperince.work_name}}</th>
+     <th scope="row">{{workexperince.work_data}}</th>
+      <td></td>
+      <td></td>
+
+      <td><a href="/WEedit/{{workexperince.work_id}}" class="btn btn-dark">Update</a></td>
+      <td><a href="/WEdelete/{{workexperince.work_id}}" class="btn btn-dark">Delete</a></td>
+ {% endfor %}   
+
+     </tr>
+   
+    
+  </tbody>
+</table>
+               
+ <hr>
+ {% endblock %}

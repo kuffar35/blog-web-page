@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+
+{% block body %}
+{% include "dashbord.html" %}
+{% include "dashbord2.html" %}
+
+{% from "includes/formhelpers.html" import render_field %}<br>
+<hr>
+<td><a href="/cvLanguageAdd" class="btn btn-info">ADD LANGUAGE</a></td> 
+<hr>
+ 
+ 
+   <table class="table table-hover table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">SCHOOL NAME</th>
+      <th scope="col">SCHOOL LEVEL</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+ {% for language in language %}
+    <tr>
+     <th scope="row">{{language.lang_id}}</th>
+     <th scope="row">{{language.lang_name }}</th>
+     <th scope="row">{{language.lang_level}}</th>
+      <td></td>
+      <td></td>
+
+      <td><a href="/Ledit/{{language.lang_id}}" class="btn btn-dark">Update</a></td>
+      <td><a href="/Ldelete/{{language.lang_id}}" class="btn btn-dark">Delete</a></td> 
+ {% endfor %}   
+
+     </tr>
+    
+    
+    
+  </tbody>
+</table>
+               
+ <hr>
+
+
+ 
+ {% endblock %}

@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+
+{% block body %}
+
+
+ {%if article %}
+   
+   <h9>{{article.arthicles_title}}
+
+   	<hr>
+   	Author : {{article.arthicles_author}}
+   	<hr>
+   	Time : {{article.arthicles_createdData}}
+   	<hr>
+   	{{article.arhticles_comment|safe}}
+               
+ {%else %}
+  <div class="alert alert-warning">
+      	no posts in this blog yet
+  </div>           
+ {%endif %}
+
+{% endblock %}

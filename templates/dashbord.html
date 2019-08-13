@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+
+{% block body %}
+
+
+<small>WELCOME {{session["username"]}}</small>
+<hr>
+<a href="/updateIndex" class="btn btn-danger">INDEX</a>
+<a href="/addArticles" class="btn btn-danger">ARTICLES</a>
+<a href="/addProjects" class="btn btn-danger">PROJECTS</a>
+<a href="/curriculum_vitae" class="btn btn-danger">CV</a>
+<a href="/updateContact" class="btn btn-danger">CONTACT</a>
+
+
+{% endblock %}
